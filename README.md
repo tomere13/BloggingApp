@@ -4,7 +4,7 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 
 # Features
 
-	•	Create, read, update, and delete blog posts.
+	•	Create, read, and filter blog posts.
 	•	Simple web interface with Node-RED Dashboard.
 	•	Dockerized for easy setup.
 
