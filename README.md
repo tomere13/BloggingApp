@@ -44,17 +44,17 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
     volumes:
       mysql-data:
 
-	3.	Start containers:
+## 3. Start containers:
      docker-compose up -d
 
-  # Access Node-RED:
+## 4.  Access Node-RED:
     Go to http://localhost:1880.
     
-  # Install Node-RED nodes:
+## 5.  Install Node-RED nodes:
 	•	Open Node-RED.
 	•	Go to the menu, select “Manage palette” -> “Install” tab.
 	•	Install node-red-dashboard and node-red-node-mysql.
  
-  # Usage
+ #  Usage
 	•	Import the flow: Use the provided flows.json.
 	•	Access the Dashboard: Go to http://localhost:1880/ui.
