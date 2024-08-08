@@ -13,11 +13,9 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 	•	Docker and Docker Compose
 
 # Installation
-## 1. Clone the repository: 
-	     git clone https://github.com/your-username/node-red-blogging-app.git 
-	     cd node-red-blogging-app
+
      
- ## 2. Create docker-compose.yml file and change Credentials at MySQL (make sure your MySQL server matches db name below):
+ ## 1. Create docker-compose.yml file and change Credentials at MySQL (make sure your MySQL server matches db name below):
       version: '3'
       services:
       \nodered:
@@ -44,13 +42,13 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
     volumes:
       mysql-data:
 
-## 3. Start containers:
+## 2. Start containers:
      docker-compose up -d
 
-## 4.  Access Node-RED:
+## 3.  Access Node-RED:
     Go to http://localhost:1880.
     
-## 5.  Install Node-RED nodes:
+## 4.  Install Node-RED nodes:
 	•	Open Node-RED.
 	•	Go to the menu, select “Manage palette” -> “Install” tab.
 	•	Install node-red-dashboard and node-red-node-mysql.
