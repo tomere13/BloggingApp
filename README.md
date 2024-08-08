@@ -54,5 +54,5 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 	•	Install node-red-dashboard and node-red-node-mysql.
  
  #  Usage
-	•	Import the flow: Use the provided flows.json.
+	•	Import the flow: Use the provided blog-node-red.json.
 	•	Access the Dashboard: Go to http://localhost:1880/ui.
