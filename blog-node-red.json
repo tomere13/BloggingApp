@@ -1,0 +1,616 @@
+[
+    {
+        "id": "f6c09a06684e629f",
+        "type": "tab",
+        "label": "Test Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "318ae23127acedc2",
+        "type": "tab",
+        "label": "Blogging App",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e3e3ad2c.31b1d",
+        "type": "MySQLdatabase",
+        "name": "Node-DB",
+        "host": "mysql",
+        "port": "3306",
+        "db": "Node-DB",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "g1h2i3j4.k5l6m7",
+        "type": "ui_group",
+        "name": "Post",
+        "tab": "t1u2v3w4.x5y6z7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "t1u2v3w4.x5y6z7",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b581798abe4a35d0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "541aeba583e1910e",
+        "type": "ui_group",
+        "name": "Messages",
+        "tab": "t1u2v3w4.x5y6z7",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "43d7c7829813bacc",
+        "type": "ui_spacer",
+        "z": "318ae23127acedc2",
+        "name": "spacer",
+        "group": "g1h2i3j4.k5l6m7",
+        "order": 2,
+        "width": "6",
+        "height": "7"
+    },
+    {
+        "id": "b0ccf938132d96f3",
+        "type": "inject",
+        "z": "f6c09a06684e629f",
+        "name": "Create Table",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE IF NOT EXISTS Blog (id INT AUTO_INCREMENT PRIMARY KEY, sender VARCHAR(255), content VARCHAR(255))",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "b08ac01e27446339"
+            ]
+        ]
+    },
+    {
+        "id": "b08ac01e27446339",
+        "type": "mysql",
+        "z": "f6c09a06684e629f",
+        "mydb": "e3e3ad2c.31b1d",
+        "name": "",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "1d03a0d21aec828e"
+            ]
+        ]
+    },
+    {
+        "id": "1d03a0d21aec828e",
+        "type": "debug",
+        "z": "f6c09a06684e629f",
+        "name": "Debug Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6e1ae5cb8b4a8226",
+        "type": "inject",
+        "z": "f6c09a06684e629f",
+        "name": "Insert Record",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "INSERT INTO Blog (sender, content) VALUES ('John Doe', 'Hello, world!')",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "b08ac01e27446339"
+            ]
+        ]
+    },
+    {
+        "id": "99ed4f7af902e702",
+        "type": "inject",
+        "z": "f6c09a06684e629f",
+        "name": "Delete All Records",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE  FROM Blog",
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "b08ac01e27446339"
+            ]
+        ]
+    },
+    {
+        "id": "edf0f641867d2449",
+        "type": "inject",
+        "z": "f6c09a06684e629f",
+        "name": "Select All Records",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM Blog",
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "b08ac01e27446339"
+            ]
+        ]
+    },
+    {
+        "id": "b46ac1bc5a94dab3",
+        "type": "ui_form",
+        "z": "318ae23127acedc2",
+        "name": "Post Message Form",
+        "label": "Post a Message",
+        "group": "g1h2i3j4.k5l6m7",
+        "order": 1,
+        "width": "6",
+        "height": "10",
+        "options": [
+            {
+                "label": "Sender",
+                "value": "sender",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Content",
+                "value": "content",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "sender": "",
+            "content": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "62e58031429530b1"
+            ]
+        ]
+    },
+    {
+        "id": "89b701c3d2e8e599",
+        "type": "mysql",
+        "z": "318ae23127acedc2",
+        "mydb": "e3e3ad2c.31b1d",
+        "name": "",
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "5bd93a10906529d7",
+                "c8937f72d3a937ab"
+            ]
+        ]
+    },
+    {
+        "id": "729ffe25809c90c5",
+        "type": "mysql",
+        "z": "318ae23127acedc2",
+        "mydb": "e3e3ad2c.31b1d",
+        "name": "",
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "d7690c3d6bb266b4"
+            ]
+        ]
+    },
+    {
+        "id": "d7690c3d6bb266b4",
+        "type": "function",
+        "z": "318ae23127acedc2",
+        "name": "Format Messages",
+        "func": "var result = msg.payload;\nvar formattedResult = '';\nresult.forEach(function(row) {\n    formattedResult += `<p><strong>${row.sender}:</strong> ${row.content}</p>`;\n});\nmsg.payload = formattedResult;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 240,
+        "wires": [
+            [
+                "0838ba8d668adab5"
+            ]
+        ]
+    },
+    {
+        "id": "0838ba8d668adab5",
+        "type": "ui_template",
+        "z": "318ae23127acedc2",
+        "group": "541aeba583e1910e",
+        "name": "All Messages",
+        "order": 1,
+        "width": "6",
+        "height": "10",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3dd37bbc4c83d246",
+        "type": "ui_dropdown",
+        "z": "318ae23127acedc2",
+        "name": "Sender Dropdown",
+        "label": "Filter by Sender",
+        "tooltip": "",
+        "place": "Select sender",
+        "group": "541aeba583e1910e",
+        "order": 2,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "All",
+                "value": "All -",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "6214f503466fe736"
+            ]
+        ]
+    },
+    {
+        "id": "9de6ae4ee62e585a",
+        "type": "inject",
+        "z": "318ae23127acedc2",
+        "name": "Load Senders",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "SELECT DISTINCT sender FROM Blog;",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "6aaf928887ee3d67"
+            ]
+        ]
+    },
+    {
+        "id": "57713b6b83393367",
+        "type": "inject",
+        "z": "318ae23127acedc2",
+        "name": "Load Messages",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM Blog;",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "729ffe25809c90c5"
+            ]
+        ]
+    },
+    {
+        "id": "5bd93a10906529d7",
+        "type": "change",
+        "z": "318ae23127acedc2",
+        "name": "Messages render",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SELECT * FROM Blog",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 120,
+        "wires": [
+            [
+                "729ffe25809c90c5"
+            ]
+        ]
+    },
+    {
+        "id": "c8937f72d3a937ab",
+        "type": "change",
+        "z": "318ae23127acedc2",
+        "name": "Senders render",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "SELECT DISTINCT sender FROM Blog;",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 60,
+        "wires": [
+            [
+                "6aaf928887ee3d67"
+            ]
+        ]
+    },
+    {
+        "id": "6aaf928887ee3d67",
+        "type": "mysql",
+        "z": "318ae23127acedc2",
+        "mydb": "e3e3ad2c.31b1d",
+        "name": "",
+        "x": 1240,
+        "y": 300,
+        "wires": [
+            [
+                "7bbe81a2620e0a19"
+            ]
+        ]
+    },
+    {
+        "id": "6214f503466fe736",
+        "type": "function",
+        "z": "318ae23127acedc2",
+        "name": "Filter Messages",
+        "func": "var sender = msg.payload;\nmsg.topic = `SELECT sender, content FROM Blog WHERE sender = '${sender}';`;\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "729ffe25809c90c5"
+            ]
+        ]
+    },
+    {
+        "id": "62e58031429530b1",
+        "type": "function",
+        "z": "318ae23127acedc2",
+        "name": "Store Message",
+        "func": "var sender = msg.payload.sender.replace(/'/g, \"''\");\nvar content = msg.payload.content.replace(/'/g, \"''\");\nmsg.topic = `INSERT INTO Blog (sender, content) VALUES ('${sender}', '${content}');`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "89b701c3d2e8e599"
+            ]
+        ]
+    },
+    {
+        "id": "7bbe81a2620e0a19",
+        "type": "function",
+        "z": "318ae23127acedc2",
+        "name": "Update Dropdown",
+        "func": "var options = [];\nmsg.payload.forEach(function (row) {\n    var option = {};\n    option[`Sender - ${row.sender}`] = row.sender;\n    options.push(option);\n});\nmsg.options = options;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "3dd37bbc4c83d246"
+            ]
+        ]
+    }
+]
