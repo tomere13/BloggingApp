@@ -12,10 +12,10 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: Wilson1998
+      MYSQL_ROOT_PASSWORD: YourPass
       MYSQL_DATABASE: Node-DB
-      MYSQL_USER: Tomer
-      MYSQL_PASSWORD: Wilson1998
+      MYSQL_USER: YourUser
+      MYSQL_PASSWORD: YouPass
     ports:
       - "3307:3306"  
     volumes:
