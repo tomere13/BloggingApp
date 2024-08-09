@@ -39,8 +39,8 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 	        volumes:
 	          - mysql-data:/var/lib/mysql
     
-    	volumes:
-      	mysql-data:
+    	 volumes:
+      	 mysql-data:
        
 ## 2. Create "data" folder and create Dockerfile 
 	FROM nodered/node-red:latest
