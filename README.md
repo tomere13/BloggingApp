@@ -16,8 +16,8 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 
      
  ## 1. Create docker-compose.yml file and change Credentials, make sure that the credentials match the mysql node configuration:
-      version: '3'
-      services:
+	version: '3'
+	services:
 	      nodered:
 		build: .
 		ports:
@@ -38,9 +38,8 @@ A basic blogging application using Node-RED, Node-RED Dashboard, and MySQL, all 
 	          - "3307:3306"  
 	        volumes:
 	          - mysql-data:/var/lib/mysql
-    
-    	 volumes:
-      	 mysql-data:
+ 	volumes:
+ 	mysql-data:
        
 ## 2. Create "data" folder and create Dockerfile 
 	FROM nodered/node-red:latest
